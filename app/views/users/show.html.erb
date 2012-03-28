@@ -1,0 +1,17 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= @user.name %> | Reputation: <%= @rep %>
+      </h1>
+     <%= render 'follow_form' if signed_in? %>
+
+
+    <td class="sidebar round">
+      <strong>Name</strong> <%= @user.name %><br />
+			<% temp = root_url.chop + user_path(@user)%>
+      <strong>URL</strong>  <%= link_to temp, @user %><br />
+	  <strong>Topics</strong> <%= @user.topics.count %>	
+    </td>
+  </tr>
+</table>
